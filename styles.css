@@ -8,8 +8,8 @@
   --bounce-pink: #ff1e6a;
   --bounce-pink-hover: #e01258;
   --bounce-pink-light: #fff0f5;
-  --bounce-blue: #0098a6;
-  --bounce-blue-hover: #077984;
+  --bounce-blue: #0096db;
+  --bounce-blue-hover: #0082be;
   --bounce-orange: #ee852b;
   --bounce-orange-hover: #d26d16;
   --bounce-green: #7db042;
@@ -967,7 +967,7 @@ ul {
   background-color: var(--bounce-blue-hover);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 152, 166, 0.28);
+  box-shadow: 0 4px 14px rgba(0, 150, 219, 0.28);
 }
 
 .volunteer-link-arrow {
