@@ -898,6 +898,21 @@ ul {
   max-width: 360px;
 }
 
+.volunteer-intro-block {
+  margin-bottom: 4px;
+  border-left: 4px solid var(--bounce-green);
+  padding: 4px 0 4px 14px;
+}
+
+.volunteer-intro-text {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bounce-green-hover);
+  line-height: 1.5;
+  margin: 0;
+}
+
 .volunteer-action-link {
   display: flex;
   align-items: center;
@@ -921,6 +936,18 @@ ul {
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(255, 30, 106, 0.28);
+}
+
+.volunteer-action-link-green {
+  background-color: var(--bounce-green);
+  color: #ffffff;
+}
+
+.volunteer-action-link-green:hover {
+  background-color: var(--bounce-green-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(125, 176, 66, 0.32);
 }
 
 .volunteer-action-link-blue {
