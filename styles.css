@@ -5,15 +5,15 @@
 
 :root {
   /* Brand Palette from Bounce Logo & KEF Kids inspiration */
-  --bounce-pink: #ff1e6a;
-  --bounce-pink-hover: #e01258;
+  --bounce-pink: #ed1961;
+  --bounce-pink-hover: #d40f51;
   --bounce-pink-light: #fff0f5;
-  --bounce-blue: #0056b9;
-  --bounce-blue-hover: #00479b;
-  --bounce-orange: #ee852b;
-  --bounce-orange-hover: #d26d16;
-  --bounce-green: #7db042;
-  --bounce-green-hover: #67962f;
+  --bounce-blue: #457ec1;
+  --bounce-blue-hover: #356bb0;
+  --bounce-orange: #f7951d;
+  --bounce-orange-hover: #df7e08;
+  --bounce-green: #6fc276;
+  --bounce-green-hover: #5ba862;
 
   /* Typography & Neutrals */
   --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -125,13 +125,13 @@ ul {
   padding: 13px 36px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(255, 30, 106, 0.25);
+  box-shadow: 0 4px 12px rgba(237, 25, 97, 0.25);
 }
 
 .btn-donate-large:hover {
   background-color: var(--bounce-pink-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 30, 106, 0.35);
+  box-shadow: 0 6px 16px rgba(237, 25, 97, 0.35);
 }
 
 .btn-hero-primary {
@@ -943,7 +943,7 @@ ul {
   background-color: var(--bounce-pink-hover);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(255, 30, 106, 0.28);
+  box-shadow: 0 4px 14px rgba(237, 25, 97, 0.28);
 }
 
 .volunteer-action-link-green {
@@ -955,7 +955,7 @@ ul {
   background-color: var(--bounce-green-hover);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(125, 176, 66, 0.32);
+  box-shadow: 0 4px 14px rgba(111, 194, 118, 0.32);
 }
 
 .volunteer-action-link-blue {
@@ -967,7 +967,7 @@ ul {
   background-color: var(--bounce-blue-hover);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 86, 185, 0.28);
+  box-shadow: 0 4px 14px rgba(69, 126, 193, 0.28);
 }
 
 .volunteer-link-arrow {
