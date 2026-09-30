@@ -35,7 +35,9 @@
 /* --------------------------------------------------------------------------
    Reset & Global Styles
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -235,6 +237,7 @@ ul {
   background-color: var(--bounce-blue);
   border-color: var(--bounce-blue);
 }
+
 .nav-btn-blue:hover {
   background-color: var(--bounce-blue-hover);
   border-color: var(--bounce-blue-hover);
@@ -245,6 +248,7 @@ ul {
   background-color: var(--bounce-pink);
   border-color: var(--bounce-pink);
 }
+
 .nav-btn-pink:hover {
   background-color: var(--bounce-pink-hover);
   border-color: var(--bounce-pink-hover);
@@ -255,6 +259,7 @@ ul {
   background-color: var(--bounce-orange);
   border-color: var(--bounce-orange);
 }
+
 .nav-btn-orange:hover {
   background-color: var(--bounce-orange-hover);
   border-color: var(--bounce-orange-hover);
@@ -401,6 +406,7 @@ ul {
     height: 280px;
   }
 }
+
 /* --------------------------------------------------------------------------
    Introduction Section (KEF Kids Content Block Style)
    -------------------------------------------------------------------------- */
@@ -477,6 +483,9 @@ ul {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .activity-card:hover {
@@ -745,3 +754,155 @@ ul {
   text-decoration: underline;
 }
 
+/* --------------------------------------------------------------------------
+   About Page
+   -------------------------------------------------------------------------- */
+.about-page-main {
+  min-height: calc(100vh - 86px - 280px);
+  background-color: var(--bg-page);
+  padding: 60px 0 80px;
+}
+
+.about-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .about-layout-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 50px;
+    align-items: start;
+  }
+}
+
+.about-text-col {
+  max-width: 100%;
+}
+
+.about-page-title {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 12px;
+}
+
+.about-accent-line {
+  width: 50px;
+  height: 4px;
+  background-color: var(--bounce-blue);
+  margin-bottom: 24px;
+}
+
+.about-paragraph {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin-bottom: 18px;
+}
+
+.about-image-card {
+  max-width: 480px;
+  border: 1px solid var(--border-light);
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.about-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Volunteer Page
+   -------------------------------------------------------------------------- */
+.volunteer-page-main {
+  min-height: calc(100vh - 86px - 280px);
+  background-color: var(--bg-page);
+  padding: 60px 0 80px;
+}
+
+.volunteer-content-block {
+  max-width: 780px;
+}
+
+.volunteer-page-title {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 12px;
+}
+
+.volunteer-accent-line {
+  width: 50px;
+  height: 4px;
+  background-color: var(--bounce-pink);
+  margin-bottom: 30px;
+}
+
+.volunteer-image-card {
+  max-width: 520px;
+  border: 1px solid var(--border-light);
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.volunteer-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Simple Content Pages (Gallery, Services, Respite)
+   -------------------------------------------------------------------------- */
+.simple-page-main {
+  min-height: calc(100vh - 86px - 280px);
+  background-color: var(--bg-page);
+  padding: 60px 0 80px;
+}
+
+.simple-page-header {
+  margin-bottom: 30px;
+}
+
+.simple-page-title {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 12px;
+}
+
+.simple-page-accent {
+  width: 50px;
+  height: 4px;
+  margin-bottom: 24px;
+}
+
+.accent-pink {
+  background-color: var(--bounce-pink);
+}
+
+.accent-blue {
+  background-color: var(--bounce-blue);
+}
+
+.accent-orange {
+  background-color: var(--bounce-orange);
+}
+
+.simple-page-content {
+  min-height: 200px;
+}
