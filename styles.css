@@ -1024,8 +1024,43 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-   Gallery Page - Album Grid (5 square boxes per row on desktop)
+   Gallery Page - Album Grid & Category Sections (5 square boxes per row on desktop)
    -------------------------------------------------------------------------- */
+.gallery-category-section {
+  margin-bottom: 50px;
+}
+
+.gallery-category-section:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-category-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 20px;
+  padding-left: 14px;
+  border-left: 4px solid var(--bounce-pink);
+  line-height: 1.2;
+}
+
+.gallery-category-title.title-accent-blue {
+  border-left-color: var(--bounce-blue);
+}
+
+.gallery-category-title.title-accent-pink {
+  border-left-color: var(--bounce-pink);
+}
+
+.gallery-category-title.title-accent-orange {
+  border-left-color: var(--bounce-orange);
+}
+
+.gallery-category-title.title-accent-green {
+  border-left-color: var(--bounce-green);
+}
+
 .gallery-albums-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1073,6 +1108,18 @@ ul {
   border-color: var(--bounce-pink);
 }
 
+.album-card.card-accent-blue:hover {
+  border-color: var(--bounce-blue);
+}
+
+.album-card.card-accent-orange:hover {
+  border-color: var(--bounce-orange);
+}
+
+.album-card.card-accent-green:hover {
+  border-color: var(--bounce-green);
+}
+
 .album-card-inner {
   position: relative;
   width: 100%;
@@ -1105,6 +1152,38 @@ ul {
 
 .album-card:hover .album-ribbon {
   background-color: var(--bounce-pink-hover);
+}
+
+.album-ribbon-blue {
+  background-color: var(--bounce-blue);
+}
+
+.album-card:hover .album-ribbon-blue {
+  background-color: var(--bounce-blue-hover);
+}
+
+.album-ribbon-pink {
+  background-color: var(--bounce-pink);
+}
+
+.album-card:hover .album-ribbon-pink {
+  background-color: var(--bounce-pink-hover);
+}
+
+.album-ribbon-orange {
+  background-color: var(--bounce-orange);
+}
+
+.album-card:hover .album-ribbon-orange {
+  background-color: var(--bounce-orange-hover);
+}
+
+.album-ribbon-green {
+  background-color: var(--bounce-green);
+}
+
+.album-card:hover .album-ribbon-green {
+  background-color: var(--bounce-green-hover);
 }
 
 .album-title {
