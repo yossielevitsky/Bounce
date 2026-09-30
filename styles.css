@@ -582,6 +582,14 @@ ul {
   max-width: 320px;
 }
 
+.footer-tikva-logo {
+  margin-top: 18px;
+  height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .footer-heading {
   font-family: var(--font-heading);
   font-size: 18px;
