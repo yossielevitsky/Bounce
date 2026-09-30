@@ -254,6 +254,17 @@ ul {
   border-color: var(--bounce-pink-hover);
 }
 
+/* Button: Bounce Green */
+.nav-btn-green {
+  background-color: var(--bounce-green);
+  border-color: var(--bounce-green);
+}
+
+.nav-btn-green:hover {
+  background-color: var(--bounce-green-hover);
+  border-color: var(--bounce-green-hover);
+}
+
 /* Button 3: Warm Orange */
 .nav-btn-orange {
   background-color: var(--bounce-orange);
@@ -852,7 +863,7 @@ ul {
 .volunteer-accent-line {
   width: 50px;
   height: 4px;
-  background-color: var(--bounce-pink);
+  background-color: var(--bounce-green);
   margin-bottom: 30px;
 }
 
@@ -899,17 +910,14 @@ ul {
 }
 
 .volunteer-intro-block {
-  margin-bottom: 4px;
-  border-left: 4px solid var(--bounce-green);
-  padding: 4px 0 4px 14px;
+  margin-bottom: 6px;
 }
 
 .volunteer-intro-text {
-  font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--bounce-green-hover);
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--color-text);
   margin: 0;
 }
 
