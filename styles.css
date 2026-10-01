@@ -1197,3 +1197,218 @@ ul {
   text-overflow: ellipsis;
   letter-spacing: 0.3px;
 }
+
+/* --------------------------------------------------------------------------
+   Services Page
+   -------------------------------------------------------------------------- */
+.services-intro-text {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--color-text);
+  max-width: 800px;
+  margin-top: -12px;
+  margin-bottom: 28px;
+}
+
+.services-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.service-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  padding: 9px 20px;
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-light);
+  color: var(--color-heading);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.service-nav-pill:hover {
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.service-nav-pill.pill-blue:hover {
+  background-color: var(--bounce-blue);
+  border-color: var(--bounce-blue);
+}
+
+.service-nav-pill.pill-pink:hover {
+  background-color: var(--bounce-pink);
+  border-color: var(--bounce-pink);
+}
+
+.service-nav-pill.pill-orange:hover {
+  background-color: var(--bounce-orange);
+  border-color: var(--bounce-orange);
+}
+
+.service-nav-pill.pill-green:hover {
+  background-color: var(--bounce-green);
+  border-color: var(--bounce-green);
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 50px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-left: 6px solid var(--bounce-blue);
+  padding: 32px 36px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  scroll-margin-top: 110px;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+}
+
+.service-card-blue {
+  border-left-color: var(--bounce-blue);
+}
+
+.service-card-pink {
+  border-left-color: var(--bounce-pink);
+}
+
+.service-card-orange {
+  border-left-color: var(--bounce-orange);
+}
+
+.service-card-green {
+  border-left-color: var(--bounce-green);
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.service-card-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-heading);
+  letter-spacing: 0.2px;
+  margin: 0;
+}
+
+.service-card-body {
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.service-card-text {
+  margin: 0;
+}
+
+.service-card-body p + p {
+  margin-top: 14px;
+}
+
+/* Call to action at bottom of services */
+.services-cta-box {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--bounce-blue);
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .services-cta-box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.services-cta-content {
+  max-width: 620px;
+}
+
+.services-cta-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 8px;
+}
+
+.services-cta-text {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.services-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btn-cta-blue {
+  background-color: var(--bounce-blue);
+  color: #ffffff;
+  border-color: var(--bounce-blue);
+}
+
+.btn-cta-blue:hover {
+  background-color: var(--bounce-blue-hover);
+  border-color: var(--bounce-blue-hover);
+  color: #ffffff;
+}
+
+.btn-cta-pink {
+  background-color: var(--bounce-pink);
+  color: #ffffff;
+  border-color: var(--bounce-pink);
+}
+
+.btn-cta-pink:hover {
+  background-color: var(--bounce-pink-hover);
+  border-color: var(--bounce-pink-hover);
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .service-card {
+    padding: 24px 20px;
+  }
+
+  .service-card-title {
+    font-size: 22px;
+  }
+
+  .services-cta-box {
+    padding: 24px 20px;
+  }
+}
