@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="favicon.png" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles.css?v=2.8" />
+  <link rel="stylesheet" href="styles.css?v=2.9" />
 
   <!-- GLightbox CSS (lightweight, zero-dependency, responsive lightbox) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
@@ -290,6 +290,7 @@
           const card = document.createElement('a');
           card.href = fullUrl;
           card.className = 'photo-card glightbox';
+          card.setAttribute('data-type', 'image');
           card.setAttribute('data-gallery', 'bounce-album-gallery');
           if (caption) {
             card.setAttribute('data-title', caption);
@@ -325,9 +326,9 @@
             selector: '.glightbox',
             touchNavigation: true,
             loop: true,
-            zoomable: true,
-            openEffect: 'zoom',
-            closeEffect: 'zoom'
+            zoomable: false,
+            openEffect: 'fade',
+            closeEffect: 'fade'
           });
         }
       }

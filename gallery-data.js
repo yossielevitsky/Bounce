@@ -19,7 +19,8 @@ const GALLERY_CONFIG = {
     if (id.startsWith('http://') || id.startsWith('https://') || id.startsWith('/') || id.startsWith('images/')) {
       return id;
     }
-    return `https://res.cloudinary.com/${this.cloudName}/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/${encodeURIComponent(id)}`;
+    const cleanId = id.endsWith('.jpg') || id.endsWith('.jpeg') || id.endsWith('.png') || id.endsWith('.webp') ? id : `${id}.jpg`;
+    return `https://res.cloudinary.com/${this.cloudName}/image/upload/c_fill,w_600,h_600,g_auto,q_auto,f_auto/${encodeURIComponent(cleanId)}`;
   },
 
   /**
@@ -31,7 +32,8 @@ const GALLERY_CONFIG = {
     if (id.startsWith('http://') || id.startsWith('https://') || id.startsWith('/') || id.startsWith('images/')) {
       return id;
     }
-    return `https://res.cloudinary.com/${this.cloudName}/image/upload/c_limit,w_1920,q_auto,f_auto/${encodeURIComponent(id)}`;
+    const cleanId = id.endsWith('.jpg') || id.endsWith('.jpeg') || id.endsWith('.png') || id.endsWith('.webp') ? id : `${id}.jpg`;
+    return `https://res.cloudinary.com/${this.cloudName}/image/upload/c_limit,w_1920,q_auto,f_auto/${encodeURIComponent(cleanId)}`;
   },
 
   /**
