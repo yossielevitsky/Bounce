@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Album | Bounce</title>
+  <meta name="description" id="pageDescription" content="View photo albums from Bounce." />
+
+  <!-- Google Fonts: Montserrat & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Quicksand:wght@600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Favicon using Bounce logo -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css?v=2.8" />
+
+  <!-- GLightbox CSS (lightweight, zero-dependency, responsive lightbox) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+
+  <!-- Header with Bounce logo and navigation -->
+  <header class="site-header" id="header">
+    <div class="header-main">
+      <div class="container header-container">
+        <div class="logo-block">
+          <a href="index.html" class="brand-link" aria-label="Bounce Home">
+            <img src="Bounce-Logo.png" alt="Bounce" class="brand-logo" />
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-navigation" aria-label="Primary Navigation">
+          <ul class="nav-menu">
+            <li><a href="about.html" class="nav-btn nav-btn-blue">About Us</a></li>
+            <li><a href="volunteer.html" class="nav-btn nav-btn-pink">Volunteer</a></li>
+            <li><a href="contact.html" class="nav-btn nav-btn-orange">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-right">
+          <!-- Mobile Hamburger Toggle -->
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-nav-drawer" id="mobileDrawer">
+      <div class="container mobile-drawer-inner">
+        <ul class="mobile-nav-list">
+          <li><a href="about.html" class="mobile-nav-btn nav-btn-blue">About Us</a></li>
+          <li><a href="volunteer.html" class="mobile-nav-btn nav-btn-pink">Volunteer</a></li>
+          <li><a href="contact.html" class="mobile-nav-btn nav-btn-orange">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Album Page Content -->
+  <main class="album-page-main">
+    <div class="container">
+
+      <!-- Breadcrumbs & Navigation Bar -->
+      <div class="album-top-bar">
+        <nav class="album-breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="gallery.html">Gallery</a>
+          <span class="breadcrumb-separator">/</span>
+          <span id="breadcrumbCategory">Category</span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current" id="breadcrumbAlbum">Album</span>
+        </nav>
+
+        <a href="gallery.html" class="album-back-btn" aria-label="Back to Gallery">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Gallery
+        </a>
+      </div>
+
+      <!-- Album Header Section -->
+      <section class="album-page-header" id="albumHeader">
+        <span class="album-category-badge badge-blue" id="albumCategoryBadge">Bounce</span>
+        <h1 class="album-page-title" id="albumTitle">Loading Album...</h1>
+        <div class="album-stats-bar">
+          <span class="album-stats-count" id="albumPhotoCount">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span id="photoCountNumber">0 photos</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Photos Grid -->
+      <div class="album-photos-grid" id="albumPhotosGrid" aria-label="Album Photos">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Empty State (No photos in album yet) -->
+      <div class="album-empty-state" id="albumEmptyState" style="display: none;">
+        <span class="empty-state-icon">📷</span>
+        <h2 class="empty-state-title">Photos Coming Soon</h2>
+        <p class="empty-state-text">
+          Photos for this album are currently being gathered and will be uploaded here soon.
+        </p>
+        <div class="empty-state-actions">
+          <a href="gallery.html" class="btn btn-outline" style="border: 2px solid var(--bounce-blue); color: var(--bounce-blue);">Return to Gallery</a>
+        </div>
+      </div>
+
+      <!-- Not Found State -->
+      <div class="album-empty-state" id="albumNotFoundState" style="display: none;">
+        <span class="empty-state-icon">🔍</span>
+        <h2 class="empty-state-title">Album Not Found</h2>
+        <p class="empty-state-text">
+          We couldn't locate the album requested. It may have been renamed or moved.
+        </p>
+        <div class="empty-state-actions">
+          <a href="gallery.html" class="btn btn-primary" style="background-color: var(--bounce-blue); color: #fff;">Browse All Albums</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer (identical to other pages) -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-columns">
+
+          <!-- Column 1: Logo & Mission -->
+          <div class="footer-col footer-col-brand">
+            <a href="index.html" class="footer-logo-link">
+              <img src="Bounce-Logo.png" alt="Bounce Logo" class="footer-logo" />
+            </a>
+            <p class="footer-mission-text">
+              Bounce is a volunteer organisation for children with special needs, supported by Tikvatenoe.
+            </p>
+            <img src="images/tikva.png" alt="Tikvatenoe Logo" class="footer-tikva-logo" />
+          </div>
+
+          <!-- Column 2: Contact & Office -->
+          <div class="footer-col footer-col-contact">
+            <h4 class="footer-heading">Get in Touch</h4>
+            <ul class="footer-contact-list">
+              <li>
+                <strong>Bounce</strong><br />
+                Lamorinierestraat 264<br />
+                2018 Antwerpen
+              </li>
+              <li>
+                <strong>Phone:</strong> <a href="tel:0488377076">0488 37 70 76</a>
+              </li>
+              <li>
+                <strong>Bounce Phone:</strong> <a href="tel:0474019888">0474 01 98 88</a>
+              </li>
+              <li>
+                <strong>Email:</strong> <a href="mailto:info@bounce-antwerp.org">info@bounce-antwerp.org</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Navigation -->
+          <div class="footer-col footer-col-nav">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Bounce</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="volunteer.html">Volunteer With Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p class="copyright-text">
+          &copy; 2026 Bounce. Registered Charity No. 1234567. All rights reserved.
+        </p>
+        <p class="footer-tagline-text">
+          Dedicated to friendship, fun, and family support.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="gallery-data.js"></script>
+  <!-- GLightbox Script -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <script>
+    // Album Page Dynamic Loader
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Parse URL query params
+      const urlParams = new URLSearchParams(window.location.search);
+      const albumId = urlParams.get('album');
+
+      const albumHeader = document.getElementById('albumHeader');
+      const albumPhotosGrid = document.getElementById('albumPhotosGrid');
+      const albumEmptyState = document.getElementById('albumEmptyState');
+      const albumNotFoundState = document.getElementById('albumNotFoundState');
+
+      const pageTitle = document.getElementById('pageTitle');
+      const pageDescription = document.getElementById('pageDescription');
+      const breadcrumbCategory = document.getElementById('breadcrumbCategory');
+      const breadcrumbAlbum = document.getElementById('breadcrumbAlbum');
+      const albumCategoryBadge = document.getElementById('albumCategoryBadge');
+      const albumTitle = document.getElementById('albumTitle');
+      const photoCountNumber = document.getElementById('photoCountNumber');
+
+      if (!albumId || !GALLERY_ALBUMS[albumId]) {
+        // Show Not Found State
+        albumHeader.style.display = 'none';
+        albumPhotosGrid.style.display = 'none';
+        albumNotFoundState.style.display = 'block';
+        pageTitle.textContent = 'Album Not Found | Bounce Gallery';
+        breadcrumbCategory.textContent = 'Gallery';
+        breadcrumbAlbum.textContent = 'Not Found';
+        return;
+      }
+
+      const album = GALLERY_ALBUMS[albumId];
+
+      // Update Page Metadata
+      pageTitle.textContent = `${album.title} | Bounce Gallery`;
+
+      // Update Breadcrumbs
+      breadcrumbCategory.textContent = album.categoryTitle || 'Albums';
+      breadcrumbAlbum.textContent = album.title;
+
+      // Update Header
+      albumCategoryBadge.textContent = album.categoryTitle || 'Bounce';
+      albumCategoryBadge.className = `album-category-badge badge-${album.color || 'blue'}`;
+      albumTitle.textContent = album.title;
+
+      // Function to render photos once loaded
+      function renderPhotos(photos) {
+        const count = photos.length;
+        photoCountNumber.textContent = `${count} ${count === 1 ? 'photo' : 'photos'}`;
+
+        if (count === 0) {
+          albumPhotosGrid.style.display = 'none';
+          albumEmptyState.style.display = 'block';
+          return;
+        }
+
+        albumEmptyState.style.display = 'none';
+        albumPhotosGrid.style.display = 'grid';
+        albumPhotosGrid.innerHTML = '';
+
+        photos.forEach((photo, index) => {
+          const thumbUrl = GALLERY_CONFIG.getThumbnailUrl(photo);
+          const fullUrl = GALLERY_CONFIG.getFullUrl(photo);
+          const caption = GALLERY_CONFIG.getCaption(photo);
+
+          const card = document.createElement('a');
+          card.href = fullUrl;
+          card.className = 'photo-card glightbox';
+          card.setAttribute('data-gallery', 'bounce-album-gallery');
+          if (caption) {
+            card.setAttribute('data-title', caption);
+          }
+          card.setAttribute('aria-label', caption ? `View ${caption}` : `${album.title} photo ${index + 1}`);
+
+          card.innerHTML = `
+            <img 
+              src="${thumbUrl}" 
+              alt="${caption || album.title}" 
+              class="photo-thumbnail" 
+              loading="lazy" 
+            />
+            <div class="photo-overlay">
+              ${caption ? `<span class="photo-caption-text">${caption}</span>` : '<span></span>'}
+              <div class="photo-zoom-icon" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </div>
+            </div>
+          `;
+
+          albumPhotosGrid.appendChild(card);
+        });
+
+        // Initialize or reload GLightbox
+        if (typeof GLightbox !== 'undefined') {
+          GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            zoomable: true,
+            openEffect: 'zoom',
+            closeEffect: 'zoom'
+          });
+        }
+      }
+
+      // Fetch dynamic photos from Cloudinary by tag, with fallback to gallery-data.js
+      async function loadAlbumPhotos() {
+        let photos = [];
+
+        // 1. Try to fetch dynamic photo list from Cloudinary by tag (albumId)
+        if (GALLERY_CONFIG.cloudName) {
+          try {
+            const listUrl = `https://res.cloudinary.com/${GALLERY_CONFIG.cloudName}/image/list/${albumId}.json`;
+            const response = await fetch(listUrl);
+            if (response.ok) {
+              const data = await response.json();
+              if (data && data.resources && data.resources.length > 0) {
+                photos = data.resources.map(item => ({
+                  id: item.public_id,
+                  caption: (item.context && item.context.custom && item.context.custom.caption) || ''
+                }));
+              }
+            }
+          } catch (err) {
+            console.warn('Dynamic Cloudinary listing not available:', err);
+          }
+        }
+
+        // 2. Fall back to manual photos defined in gallery-data.js if dynamic fetch returned no photos
+        if (photos.length === 0 && album.photos && album.photos.length > 0) {
+          photos = album.photos;
+        }
+
+        renderPhotos(photos);
+      }
+
+      loadAlbumPhotos();
+    });
+  </script>
+</body>
+
+</html>
